@@ -1,0 +1,40 @@
+{
+  "name": "uv3pe-js",
+  "version": "1.0.0",
+  "description": "A package able to extract the price of a UniswapV3Pool token pair.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-mocha tests/**/*.test.ts --timeout 10000 --exit",
+    "coverage": "nyc yarn test",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "clean": "rm -rf .nyc_output coverage dist"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": "git@github.com:PtitLuca/uv3pe-js.git",
+  "author": "Luca Georges Francois <luca.georges-francois@epitech.eu>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.14.0",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "ts-mocha": "^9.0.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "env-var": "^7.1.1",
+    "ethers": "^5.6.4",
+    "jsbi": "^4.3.0",
+    "web3": "^1.7.3"
+  }
+}
