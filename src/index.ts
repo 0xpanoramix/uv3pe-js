@@ -2,6 +2,7 @@ import * as uv3pool from './uniswapv3pool.json';
 import Web3 from 'web3';
 import JSBI from 'jsbi';
 import { AbiItem } from 'web3-utils';
+import {BigNumber} from 'ethers';
 
 export interface Params {
     web3: Web3;
@@ -25,12 +26,13 @@ export async function GetUniswapV3Price({web3, poolAddress, numberOfDecimalsToke
     }
 
     return JSBI.multiply(
-        JSBI.exponentiate(
-            JSBI.divide(
-                JSBI.BigInt(sqrtPriceX96 * sqrtPriceX96),
-                JSBI.BigInt(2)),
-            JSBI.BigInt(192),
-            ),
+        JSBI.divide(
+            JSBI.BigInt(sqrtPriceX96 * sqrtPriceX96),
+            JSBI.exponentiate(
+                JSBI.BigInt(2),
+                JSBI.BigInt(192)
+            )
+        ),
         JSBI.BigInt(multiplier)
     );
 }
