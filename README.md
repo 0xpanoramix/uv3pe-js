@@ -42,4 +42,4 @@ console.log(WBTCPrice); // ---> 39300
 
 ## Author
 
-Made with ❤️ by 🤖 [Luca Georges François](https://github.com/PtitLuca) 🤖
+Made with ❤️ by 🤖 [Luca Georges François](https://github.com/0xpanoramix) 🤖
